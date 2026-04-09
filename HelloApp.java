@@ -1,21 +1,18 @@
 public class HelloApp {
     public static void main(String[] args) {
 
-        // Default case
-        if (args.length == 0) {
-            System.out.println("Hello, World!");
+        String names;
+
+        // Check if arguments are provided
+        if (args.length > 0) {
+            // Join all arguments with comma and space
+            names = String.join(", ", args);
         } else {
-            StringBuilder nameBuilder = new StringBuilder();
-
-            // Add names with comma
-            for (String name : args) {
-                nameBuilder.append(name).append(", ");
-            }
-
-            // Remove last ", "
-            String result = nameBuilder.substring(0, nameBuilder.length() - 2);
-
-            System.out.println("Hello, " + result + "!");
+            // Default message
+            names = "World";
         }
+
+        // Print greeting
+        System.out.println("Hello, " + names + "!");
     }
 }
